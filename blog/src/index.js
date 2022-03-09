@@ -2,36 +2,52 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-
-// 버튼 렌더링 사각형 9개를 랜더링한다
+// 자식
+// 버튼 X  랜더링한다
 class Square extends React.Component {
 
     // 클래스 생성자를 추가해서 state 초기화
-    constructor(props) {
-        super(props);
-        this.state={
-            value : null,
-        };
-    }
+
 
     render() {
         return (
             <button
                 className="square"
                 onClick={ ()=>{
-                this.setState({value:'X'});
+                this.props.onClick();
             }}>
 
-                {this.state.value}
+                {this.props.value}
             </button>
         );
     }
 }
 
+// 부모
 // 사각형 9개 랜더링
 class Board extends React.Component {
+
+    constructor(props) {
+
+        super(props);
+        this.state={
+            squares : Array(9).fill(null)
+        };
+    }
+
+    handleClick(i){
+        const squares =this.state.squares.slice();
+        console.log(squares);
+        squares[i]='X';
+        this.setState({squares: squares});
+    }
     renderSquare(i) {
-        return <Square value={i}/>;
+        return (
+            <Square
+                value={this.state.squares[i]}
+                onClick={() => this.handleClick(i)}
+            />
+        );
     }
 
     render() {
