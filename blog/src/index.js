@@ -4,23 +4,16 @@ import './index.css';
 
 // 자식
 // 버튼 X  랜더링한다
-class Square extends React.Component {
 
-    // 클래스 생성자를 추가해서 state 초기화
+function Square(props) {
 
+    return (
 
-    render() {
-        return (
-            <button
-                className="square"
-                onClick={ ()=>{
-                this.props.onClick();
-            }}>
+        <button className="square" onClick={props.onClick}>
+            {props.value}
 
-                {this.props.value}
-            </button>
-        );
-    }
+        </button>
+    );
 }
 
 // 부모
@@ -31,15 +24,20 @@ class Board extends React.Component {
 
         super(props);
         this.state={
-            squares : Array(9).fill(null)
+            squares : Array(9).fill(null),
+            xIsNext : true,
+
         };
     }
 
     handleClick(i){
-        const squares =this.state.squares.slice();
-        console.log(squares);
-        squares[i]='X';
-        this.setState({squares: squares});
+        const squares = this.state.squares.slice();
+
+        squares[i]=this.state.xIsNext ? 'X':'0';
+        this.setState({
+            squares:squares,
+            xIsNext : !this.state.xIsNext
+        });
     }
     renderSquare(i) {
         return (
@@ -51,7 +49,7 @@ class Board extends React.Component {
     }
 
     render() {
-        const status = 'Next player: y';
+        const status = 'Next player:'+(this.state.xIsNext);
 
         return (
             <div>
