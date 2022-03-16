@@ -1,16 +1,22 @@
-import React, {useState} from 'react';
+
 import ReactDOM from 'react-dom';
 import './index.css';
-
+import React, { useState } from 'react'
 // 자식 <button> 랜더링
 function Square (props){
-    // 3 이쪽으로 전부 뿌려준다.
+
+    const [message , setMessage] = useState({value:null});
+    console.log(message);
+
+
     return (
-        <button className="square">
-            {props.value}
+        <button className="square" onClick={()=> setMessage({value:"X"})} >
+        {message.value}
         </button>
     )
 }
+
+
 
 // 부모 사각형 9개 랜더링
 const Board = (props)=>{
