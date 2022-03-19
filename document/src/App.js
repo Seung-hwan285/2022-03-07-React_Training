@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ExpenselItem from "./component/ExpenselItem.js";
+import ExpenRenderDate from "./component/ExpenRenderDate.js";
 
 
 class App extends React.Component{
@@ -19,7 +20,6 @@ class App extends React.Component{
             },
 
             {
-
                 title: 'Hwan Insurance',
                 amount :40.54,
                 date : new Date(2004,3,2)
@@ -30,22 +30,8 @@ class App extends React.Component{
 
     render() {
         return(
-
             <div>
-                <ExpenselItem
-                    title={this.expen[0].title}
-                    amount={this.expen[0].amount}
-                    date={this.expen[0].date}/>
-
-                <ExpenselItem
-                    title={this.expen[1].title}
-                    amount={this.expen[1].amount}
-                    date={this.expen[1].date}/>
-
-                <ExpenselItem
-                    title ={this.expen[2].title}
-                    amount={this.expen[2].amount}
-                    date={this.expen[2].date}/>
+                <ExpenRenderDate data={this.expen}/>
             </div>
         );
     }
