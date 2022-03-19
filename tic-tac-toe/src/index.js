@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 
 // Board 상태가 변화될때 Square 컴포넌트는 다시 랜더링된다.
 // 자식 <button> 랜더링
+
 const Square=(props)=>{
 
 
@@ -21,7 +22,6 @@ const Square=(props)=>{
 // 부모 사각형 9개 랜더링
 const Board = (props)=>{
 
-
     const [message , setMessage] = useState({
         squares : Array(9).fill(null),
 
@@ -37,7 +37,10 @@ const Board = (props)=>{
         // 즉 리액트에서 순수 컴포넌트를 만드는데 도움을 준다.
         const sliceSquares = message.squares.slice();
 
-        console.log(message.xNext)
+        console.log(calculateWinner(sliceSquares));
+        if(calculateWinner(sliceSquares)){
+            return;
+        }
 
         sliceSquares[i]=  message.xNext ? 'X':'O';
 
@@ -54,13 +57,12 @@ const Board = (props)=>{
             value={message.squares[i]}
             onClick={()=>handleClick(i)}
         />;
-
     }
-
-
     const handlerWinner =()=>{
         const winner  =calculateWinner(message.squares);
         let status;
+
+
 
         if(winner){
             status= 'Winner ' + winner;
@@ -74,7 +76,6 @@ const Board = (props)=>{
 
     // 여기서 값이 전달되고 1
     return (
-
         <div>
             <div className="status">{handlerWinner()}</div>
             <div className="board-row">
