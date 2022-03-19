@@ -2,31 +2,44 @@
 import ReactDOM from 'react-dom';
 import './index.css';
 import React, { useState } from 'react'
+
+
 // 자식 <button> 랜더링
-function Square (props){
+const Square=(props)=>{
 
     const [message , setMessage] = useState({value:null});
-    console.log(message);
-
 
     return (
-        <button className="square" onClick={()=> setMessage({value:"X"})} >
-        {message.value}
+        <button className="square"
+                onClick={()=>props.onClick()}>
+            {props.value}
         </button>
     )
 }
 
-
-
 // 부모 사각형 9개 랜더링
-const Board = (props)=>{
+const Board = ()=>{
+    
+    const [message , setMessage] = useState({squares : Array(9).fill(null)});
+
+    const handleClick=(i)=>{
+        const value = message.squares.slice();
+
+        value[i]='X';
+        setMessage({squares: value})
+    }
 
     // 1번 값들을 받아와서 2
     const renderSquare=(i)=>{
-        return <Square value={i} />;
+
+        return <Square
+            value={message.squares[i]}
+            onClick={()=>handleClick(i)}
+        />;
+
     }
 
-    const status = 'Next Player : ';
+    const status = `Next Player : `;
     // 여기서 값이 전달되고 1
     return (
         <div>
