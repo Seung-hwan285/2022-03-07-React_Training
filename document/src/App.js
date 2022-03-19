@@ -18,16 +18,35 @@ class App extends React.Component{
                 date : new Date(2021,2,26)
             },
 
-        ]
+            {
+
+                title: 'Hwan Insurance',
+                amount :40.54,
+                date : new Date(2004,3,2)
+            },
+
+        ];
     }
 
     render() {
         return(
 
-            <ExpenselItem title ={this.expen[0].title}
-                amount ={this.expen[0].amount}
-                 date = {this.expen[0].date}
-            />
+            <div>
+                <ExpenselItem
+                    title={this.expen[0].title}
+                    amount={this.expen[0].amount}
+                    date={this.expen[0].date}/>
+
+                <ExpenselItem
+                    title={this.expen[1].title}
+                    amount={this.expen[1].amount}
+                    date={this.expen[1].date}/>
+
+                <ExpenselItem
+                    title ={this.expen[2].title}
+                    amount={this.expen[2].amount}
+                    date={this.expen[2].date}/>
+            </div>
         );
     }
 }
