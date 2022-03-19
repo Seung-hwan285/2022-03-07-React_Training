@@ -58,21 +58,25 @@ const Board = (props)=>{
     }
 
 
-    const winner  =calculateWinner(message.squares);
+    const handlerWinner =()=>{
+        const winner  =calculateWinner(message.squares);
+        let status;
 
+        if(winner){
+            status= 'Winner ' + winner;
+        }else{
+            status='Next Player ' + (message.xNext ? 'X':'O');
+        }
 
-    let status;
-    if(winner){
-        status= 'Winner' + winner;
-    }else{
-        status='Next Player' +message.xNext ? 'X':'O';
+        return status;
     }
+
 
     // 여기서 값이 전달되고 1
     return (
 
         <div>
-            <div className="status">{status}</div>
+            <div className="status">{handlerWinner()}</div>
             <div className="board-row">
                 {renderSquare(0)}
                 {renderSquare(1)}
