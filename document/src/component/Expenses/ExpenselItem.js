@@ -10,6 +10,8 @@ class ExpenselItem extends React.Component{
     constructor(props) {
 
         super(props);
+
+        console.log(props.date)
     }
 
     render() {

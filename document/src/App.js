@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import ExpenselItem from "./component/ExpenselItem.js";
-import ExpenRenderDate from "./component/ExpenRenderDate.js";
+import ExpenselItem from "./component/Expenses/ExpenselItem.js";
+import ExpenRenderDate from "./component/Expenses/ExpenRenderDate.js";
 
 
 class App extends React.Component{
