@@ -1,7 +1,9 @@
-import React, {Component} from 'react'
+import React, {Component, useState} from 'react'
 
 import "./ExpenselItem.css"
 import ExpenDate from "./ExpenDate.js";
+
+
 
 
 
@@ -11,8 +13,23 @@ class ExpenselItem extends React.Component{
 
         super(props);
 
-        console.log(props.date)
+        // state 초기값 설정
+        this.state={
+            uptitle:'제목',
+        }
+
+        this.clickEvent = this.clickEvent.bind(this);
     }
+
+
+    clickEvent() {
+        
+        this.setState(()=>({
+            uptitle : 'fdsafdas',
+        }));
+        console.log(this.state.uptitle);
+    }
+
 
     render() {
         return(
@@ -23,10 +40,10 @@ class ExpenselItem extends React.Component{
                 <div className="expense-item">{this.props.date.toLocaleString()}</div>
 
                 <div className="expense-item__description">
-                    <h2>{this.props.title}</h2>
+                    <h2>{this.state.uptitle}</h2>
                     <div className="expense-item__price">{this.props.amount}</div>
                 </div>
-
+                <button onClick={this.clickEvent}>Change Title</button>
             </div>
 
         );
