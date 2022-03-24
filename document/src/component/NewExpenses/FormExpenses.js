@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./new.css"
 
+
 const  FormExpenses=(props)=>{
 
 
@@ -20,13 +21,11 @@ const  FormExpenses=(props)=>{
     }
 
     const handlerDateClick=(e)=>{
-
         setDate(e.target.value);
     }
 
     const handlerSubmit=(e)=>{
         e.preventDefault();
-
 
         const expendDate = {
             title : entitle,
@@ -35,7 +34,7 @@ const  FormExpenses=(props)=>{
         }
 
 
-        // 부모한테 받은 props에서 form값 넘겨줌
+        // 부모한테 받은 props에서 input값들 넘겨줌
         props.onFormData(expendDate);
 
         setTilte('');

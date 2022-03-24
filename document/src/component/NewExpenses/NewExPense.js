@@ -13,19 +13,19 @@ const NewExPense =(props)=>{
         const obj={
             ...expen , id: Math.random().toString()
         }
-        console.log(obj);
 
+        console.log(obj)
         // 부모로부터 전달받은 함수에서 obj을 넣음
         props.onFormData(obj);
     }
 
-    
+
 
 
     return(
 
         <div className="new-expense">
-            {/*props 함수 전달*/}
+            {/*props로  전달받아서  expenseDate() 호출*/}
             <FormExpenses onFormData ={expenseDate}/>
         </div>
     )
