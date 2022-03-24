@@ -5,6 +5,7 @@ import ExpenDate from "./ExpenDate.js";
 import Card from "../UI/Card.js";
 
 
+
 // const ExpenselItem = (props) => {
 //     console.log(props)
 //
@@ -68,7 +69,6 @@ class ExpenselItem extends React.Component{
         return(
 
             <div>
-
                 <ExpenDate data={this.props.date}/>
                 <div className="expense-item">{this.props.date.toLocaleString()}</div>
 
@@ -78,6 +78,8 @@ class ExpenselItem extends React.Component{
                 </div>
                 <button onClick={()=>this.clickEvent()}>Change Title</button>
                 <button onClick={()=>this.clickReset()}>Reset</button>
+
+
             </div>
 
         );
