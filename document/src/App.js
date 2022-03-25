@@ -36,8 +36,6 @@ const App =()=>{
     const [visible , setVisible] =useState(true);
 
     const handlerFormData=(expnese)=>{
-
-
         setVisible(!visible);
         setUpDateExpen((preveState)=>{
 
