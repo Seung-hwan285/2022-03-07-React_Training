@@ -17,7 +17,6 @@ const NewExPense =(props)=>{
 
 
     return(
-
         <div className="new-expense">
             {/*props로  전달받아서  expenseDate() 호출*/}
             <FormExpenses onFormData ={expenseDate}/>

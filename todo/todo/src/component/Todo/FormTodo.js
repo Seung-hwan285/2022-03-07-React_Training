@@ -14,7 +14,6 @@ const FormTodo =(props)=>{
         props.onFormData(value);
 
         setValue('');
-
     }
 
 

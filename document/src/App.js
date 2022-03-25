@@ -6,7 +6,7 @@ import NewExPense from "./component/NewExpenses/NewExPense";
 
 const App =()=>{
 
-    const expen=[
+    const [upDateExpen,setUpDateExpen]   = useState([
         {
             title: 'Car Insurance',
             amount : 29.54,
@@ -26,10 +26,10 @@ const App =()=>{
             id : Math.random().toString(),
         },
 
-    ];
+    ]);
 
 
-    const [upDateExpen,setUpDateExpen]= useState(expen);
+
 
 
     // 비동기적으로 실행된다.
