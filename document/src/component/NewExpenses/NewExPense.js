@@ -5,16 +5,12 @@ import  "./new.css"
 
 const NewExPense =(props)=>{
 
-
     const expenseDate =(expen)=>{
-
-
             // 콜백함수를 복사해서 생성
         const obj={
             ...expen , id: Math.random().toString()
         }
 
-        console.log(obj)
         // 부모로부터 전달받은 함수에서 obj을 넣음
         props.onFormData(obj);
     }

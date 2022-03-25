@@ -6,28 +6,46 @@ import FilterExpenses from "./FilterExpenses";
 
 const ExpenRenderDate =(props)=>{
 
+
     const [filter , setFilter] =useState('2020');
 
 
-    const channgeYear=(e)=>{
+    const channgeYear=(e)=> {
+        console.log(e);
         setFilter(e);
     }
 
 
-    return(
+
+    const yearFilter = props.data.filter(($el)=>{
+        console.log($el);
+        return $el.date.getFullYear().toString() === filter;
+    });
+
+    console.log(yearFilter)
+    return (
         <div>
             <Card className="container">
-            {/*props 로 함수를 호출 */}
-            <FilterExpenses selected={filter} data={channgeYear}/>
+                {/*props 로 함수를 호출 */}
 
-                {props.data.map(($el)=> <ExpenselItem
 
-                    title ={$el.title}
-                    amount ={$el.amount}
-                    date = {$el.date}
-                    key = {$el.id}
-                />)}
 
+                < FilterExpenses selected={filter} data={channgeYear}/>
+
+
+
+                { yearFilter.length > 0 ? (yearFilter.map(($el) => <ExpenselItem
+                    title={$el.title}
+                    amount={$el.amount}
+                    date={$el.date}
+                    key={$el.id}
+                />)) : (<p>Not found</p>)}
+                {/*{props.data.map(($el)=> <ExpenselItem*/}
+                {/*    title ={$el.title}*/}
+                {/*    amount ={$el.amount}*/}
+                {/*    date = {$el.date}*/}
+                {/*    key = {$el.id}*/}
+                {/*    />)}*/}
 
 
             </Card>

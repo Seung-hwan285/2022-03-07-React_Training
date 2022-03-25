@@ -5,11 +5,12 @@ import "./Filter.css"
 const FilterExpenses =(props)=>{
 
 
-
     const yaerEvent =(e)=>{
-
+        const value = e.target.value;
         props.data(e.target.value);
     }
+
+
     return (
         <div>
             <div className="expenses-filter">
@@ -18,20 +19,23 @@ const FilterExpenses =(props)=>{
                 </div>
 
                 <select value={props.selected} onChange={yaerEvent}>
-                    <option value='2022'>
-                        2022
+                    <option value='2024'>
+                        2024
                     </option>
 
                     <option value='2021'>
                         2021
                     </option>
 
-                    <option value='2020'>
-                        2020
+                    <option value='1999'>
+                        1999
                     </option>
 
-                </select>
+                    <option value='2005'>
 
+                        2005
+                    </option>
+                </select>
 
                 <div>
                     <div>
