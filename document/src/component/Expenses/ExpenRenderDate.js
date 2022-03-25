@@ -11,16 +11,16 @@ const ExpenRenderDate =(props)=>{
 
 
     const channgeYear=(e)=> {
-        console.log(e);
+
         setFilter(e);
     }
 
     const yearFilter = props.data.filter(($el)=>{
-        console.log($el);
+
         return $el.date.getFullYear().toString() === filter;
     });
 
-    console.log(yearFilter)
+
     return (
         <div>
             <Card className="container">

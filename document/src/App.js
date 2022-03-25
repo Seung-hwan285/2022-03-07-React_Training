@@ -47,26 +47,24 @@ const App =()=>{
         });
     }
 
-    const [visible , setVisible] =useState(false);
+    // 비동기적으로 실행된다.
+    const [visible , setVisible] =useState(true);
 
 
     const visibleHandler =()=>{
-        setVisible(!visible);
+
+         setVisible(!visible); // 비동기라서 아래 콘솔 먼저 출력
+        console.log(visible);
+
     }
 
-    const ifds=()=>{
-
-        if(visible){
-
-        }
-    }
 
     return(
-        <div>
-            <button onClick={visibleHandler}> {visible ? '숨기기'
-                : '보이기'} </button>
 
-            {visible ? <NewExPense onFormData ={handlerFormData}/> : null}
+        <div>
+            <button onClick={visibleHandler}>클릭</button>
+
+            {visible ? null : <NewExPense onFormData ={handlerFormData}/> }
             {/*props로 전달받아서  handlerFormData() 호출 */}
 
             {/*props로 객체 전달*/}
