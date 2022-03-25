@@ -32,8 +32,13 @@ const App =()=>{
     const [upDateExpen,setUpDateExpen]= useState(expen);
 
 
+    // 비동기적으로 실행된다.
+    const [visible , setVisible] =useState(true);
+
     const handlerFormData=(expnese)=>{
 
+
+        setVisible(!visible);
         setUpDateExpen((preveState)=>{
 
             // 새로운데이터를 이전값에 넣어줌
@@ -46,9 +51,6 @@ const App =()=>{
 
         });
     }
-
-    // 비동기적으로 실행된다.
-    const [visible , setVisible] =useState(true);
 
 
     const visibleHandler =()=>{
