@@ -16,8 +16,6 @@ const NewExPense =(props)=>{
     }
 
 
-
-
     return(
 
         <div className="new-expense">

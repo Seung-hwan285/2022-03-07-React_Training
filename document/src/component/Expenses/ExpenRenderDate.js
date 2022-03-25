@@ -15,8 +15,6 @@ const ExpenRenderDate =(props)=>{
         setFilter(e);
     }
 
-
-
     const yearFilter = props.data.filter(($el)=>{
         console.log($el);
         return $el.date.getFullYear().toString() === filter;
@@ -28,11 +26,7 @@ const ExpenRenderDate =(props)=>{
             <Card className="container">
                 {/*props 로 함수를 호출 */}
 
-
-
                 < FilterExpenses selected={filter} data={channgeYear}/>
-
-
 
                 { yearFilter.length > 0 ? (yearFilter.map(($el) => <ExpenselItem
                     title={$el.title}

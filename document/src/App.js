@@ -47,11 +47,28 @@ const App =()=>{
         });
     }
 
-    console.log(upDateExpen);
+    const [visible , setVisible] =useState(false);
+
+
+    const visibleHandler =()=>{
+        setVisible(!visible);
+    }
+
+    const ifds=()=>{
+
+        if(visible){
+
+        }
+    }
+
     return(
         <div>
+            <button onClick={visibleHandler}> {visible ? '숨기기'
+                : '보이기'} </button>
+
+            {visible ? <NewExPense onFormData ={handlerFormData}/> : null}
             {/*props로 전달받아서  handlerFormData() 호출 */}
-            <NewExPense onFormData ={handlerFormData}/>
+
             {/*props로 객체 전달*/}
             <ExpenRenderDate data={upDateExpen}/>
         </div>
