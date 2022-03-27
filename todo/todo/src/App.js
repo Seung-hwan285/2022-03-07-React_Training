@@ -1,6 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import TodoItems from "./component/Todo/Todo";
+import TodoItems from "./component/Todo/TodoItems";
+
+ //최상단 컴포넌트
+// [x] 입력 추가
+// [] 버튼 누르면 삭제
+// []
 
 function App() {
   return (

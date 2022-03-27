@@ -1,8 +1,9 @@
 import React, {useState} from "react";
-import "./Todo.css"
-import FormTodo from "./FormTodo";
-import ListValueTodo from "./listValueTodo";
-import TodoResults from "./listValueTodo";
+import "../../ui/Todo.css"
+import FormTodo from "./Content";
+
+import TodoResults from "./ContentResults";
+import Content from "./Content";
 
 const TodoItems=()=>{
 
@@ -27,7 +28,7 @@ const TodoItems=()=>{
     console.log(list)
     return (
         <div>
-            <FormTodo onFormData={resultInput}/>
+            <Content onFormData={resultInput}/>
             <TodoResults data={list} />
         </div>
     );
