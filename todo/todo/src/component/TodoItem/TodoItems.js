@@ -3,10 +3,10 @@ import "../../ui/modules.css"
 import FormTodo from "../Title/onContent";
 
 
-import TodoResults from "./onContentResults";
+import TodoResults from "./ContentResults";
 import OnContent from "../Title/onContent";
 
-const OnTodoItems=()=>{
+const TodoItems=()=>{
 
     const [list,setList]=useState([
         {
@@ -37,4 +37,4 @@ const OnTodoItems=()=>{
 
 }
 
-export default OnTodoItems;
+export default TodoItems;

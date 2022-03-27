@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Button from "./Button";
 
 
 // 삭제 수정 버튼도 만들기
@@ -11,8 +12,9 @@ const TodoResults=(props)=>{
             <ul className="ui-container">
                 {props.data.map(($el)=>(
                     <li key={$el.id}>{$el.item}
-                        <button className="btn">삭제</button>
-                        <button className="btn">수정</button>
+
+
+                        <Button/>
                     </li>
 
                 ))}
