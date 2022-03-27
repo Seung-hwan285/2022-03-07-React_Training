@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 
-const FormTodo =(props)=>{
-
+const Content =(props)=>{
 
     const [value,setValue]=useState('');
 
@@ -11,11 +10,16 @@ const FormTodo =(props)=>{
 
     const todoSubmit=(e)=>{
         e.preventDefault();
-        props.onFormData(value);
+
+        const obj = {
+            id : Math.random(),
+            item : value,
+        };
+
+        props.onFormData(obj);
 
         setValue('');
     }
-
 
     return(
         <div>
@@ -27,4 +31,4 @@ const FormTodo =(props)=>{
 
     )
 }
-export default FormTodo;
+export default Content;

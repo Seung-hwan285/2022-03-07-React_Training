@@ -2,10 +2,9 @@ import React, {useState} from "react";
 import "./Todo.css"
 import FormTodo from "./FormTodo";
 import ListValueTodo from "./listValueTodo";
+import TodoResults from "./listValueTodo";
 
-const Todo=()=>{
-
-
+const TodoItems=()=>{
 
     const [list,setList]=useState([
         {
@@ -19,23 +18,20 @@ const Todo=()=>{
         },
     ]);
 
-
-    const resultInput =(value)=>{
-
+    const resultInput =(obj)=>{
+        setList((prevState=>{
+            return [...prevState , obj];
+        }));
     }
 
-
-    
+    console.log(list)
     return (
         <div>
             <FormTodo onFormData={resultInput}/>
-            <ListValueTodo data={list} />
-
+            <TodoResults data={list} />
         </div>
-    )
-
-
+    );
 
 }
 
-export default Todo;
+export default TodoItems;
