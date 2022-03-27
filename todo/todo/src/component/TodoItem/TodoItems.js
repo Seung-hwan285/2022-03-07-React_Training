@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import "../../ui/modules.css"
-import FormTodo from "../Title/onContent";
+import Content from "../Title/Content";
 
 
 import TodoResults from "./ContentResults";
-import OnContent from "../Title/onContent";
 
 const TodoItems=()=>{
 
@@ -20,17 +19,29 @@ const TodoItems=()=>{
         },
     ]);
 
+
     const resultInput =(obj)=>{
+        console.log(obj)
         setList((prevState=>{
+            console.log(prevState);
             return [...prevState , obj];
         }));
     }
 
-    console.log(list)
+
+    const handlerDeletItem=(id)=>{
+        console.log(id)
+        setList((prevState => {
+            return prevState.filter(($el) => $el.id !== id);
+        }))
+        console.log(list);
+    }
+
+
     return (
         <div className="todoItems-container">
-            <OnContent onFormData={resultInput}/>
-            <TodoResults data={list} />
+            <Content onFormData={resultInput}/>
+            <TodoResults items={list} onDeleteItem={handlerDeletItem} />
 
         </div>
     );

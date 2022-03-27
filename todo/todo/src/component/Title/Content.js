@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "../../ui/modules/content.css"
 
-const OnContent =(props)=>{
+const Content =(props)=>{
 
     const [value,setValue]=useState('');
 
@@ -32,4 +32,4 @@ const OnContent =(props)=>{
 
     )
 }
-export default OnContent;
+export default Content;

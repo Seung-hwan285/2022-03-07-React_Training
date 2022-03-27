@@ -1,4 +1,19 @@
 .todoItems-container li{
-    font-size: 30px;
+
     list-style: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    font-size: 30px;
+}
+.todoItems-container .text{
+    font-size: 15px;
+}
+
+
+.ui-container{
+
+    background-color: white;
+    padding: 20px;
+    width: 25.5%;
+    margin: auto;
+    text-align: left;
 }

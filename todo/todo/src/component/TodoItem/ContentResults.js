@@ -1,25 +1,29 @@
 import React, {useState} from "react";
-import Button from "./Button";
+import CreateItem from "./CourseGoalItem";
+
 
 
 // 삭제 수정 버튼도 만들기
 // [] 삭제 버튼
+// 삭제 구현 현재 id랑 클릭한 id가 같으면 삭제해버리기
 // [] 수정 버튼
+
+
+// 입력한 값은 잘 들어감
 const TodoResults=(props)=>{
 
-    console.log(props.data);
     return(
             <ul className="ui-container">
-                {props.data.map(($el)=>(
-                    <li key={$el.id}>{$el.item}
+                {props.items.map(($el)=>(
 
-
-                        <Button/>
+                    <li key={$el.id}>
+                        <CreateItem
+                            id={$el.id}
+                            item={$el.item}
+                            onDelete={props.onDeleteItem}
+                        />
                     </li>
-
                 ))}
-
-
             </ul>
     );
 }
