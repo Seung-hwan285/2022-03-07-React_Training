@@ -1,11 +1,12 @@
 import React, {useState} from "react";
-import "../../ui/Todo.css"
-import FormTodo from "./Content";
+import "../../ui/modules.css"
+import FormTodo from "../Title/onContent";
 
-import TodoResults from "./ContentResults";
-import Content from "./Content";
 
-const TodoItems=()=>{
+import TodoResults from "./onContentResults";
+import OnContent from "../Title/onContent";
+
+const OnTodoItems=()=>{
 
     const [list,setList]=useState([
         {
@@ -27,12 +28,13 @@ const TodoItems=()=>{
 
     console.log(list)
     return (
-        <div>
-            <Content onFormData={resultInput}/>
+        <div className="todoItems-container">
+            <OnContent onFormData={resultInput}/>
             <TodoResults data={list} />
+
         </div>
     );
 
 }
 
-export default TodoItems;
+export default OnTodoItems;

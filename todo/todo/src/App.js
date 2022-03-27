@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import TodoItems from "./component/Todo/TodoItems";
+import OnTodoItems from "./component/TodoItem/onTodoItems";
 
  //최상단 컴포넌트
 // [x] 입력 추가
@@ -10,7 +10,7 @@ import TodoItems from "./component/Todo/TodoItems";
 function App() {
   return (
     <div className="App">
-      <TodoItems/>
+      <OnTodoItems/>
     </div>
   );
 }
