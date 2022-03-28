@@ -6,12 +6,19 @@ const Content =(props)=>{
     const [value,setValue]=useState('');
 
     const handlerInput =(e)=>{
+
         setValue(e.target.value);
     }
 
     const todoSubmit=(e)=>{
-        e.preventDefault();
 
+        e.preventDefault();
+       
+        
+        if(!value){
+            alert('값을 입력해주세요')
+            return;
+        }
         const obj = {
             id : Math.random(),
             item : value,

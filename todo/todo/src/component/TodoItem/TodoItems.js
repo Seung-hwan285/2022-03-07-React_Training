@@ -21,9 +21,9 @@ const TodoItems=()=>{
 
 
     const resultInput =(obj)=>{
-        console.log(obj)
+
         setList((prevState=>{
-            console.log(prevState);
+
             return [...prevState , obj];
         }));
     }
@@ -35,6 +35,7 @@ const TodoItems=()=>{
             return prevState.filter(($el)=>$el.id !==id);
         }));
     }
+
 
 
 
