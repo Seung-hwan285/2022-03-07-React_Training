@@ -12,6 +12,18 @@ import CreateItem from "./CourseGoalItem";
 // 입력한 값은 잘 들어감
 const TodoResults=(props)=>{
 
+
+    const handlerdisplayNone=()=>{
+        if(props.items.length ===0){
+            const $list = document.querySelector('.ui-container');
+
+            console.log($list);
+
+            $list.style.display='none';
+        }
+    }
+
+    handlerdisplayNone();
     return(
             <ul className="ui-container">
                 {props.items.map(($el)=>(
@@ -20,7 +32,7 @@ const TodoResults=(props)=>{
                         <CreateItem
                             id={$el.id}
                             item={$el.item}
-                            onDelete={props.onDeleteItem}
+                            onDeleteItemId = {props.onDeleteItemId}
                         />
                     </li>
                 ))}

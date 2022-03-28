@@ -4,6 +4,7 @@ import Content from "../Title/Content";
 
 
 import TodoResults from "./ContentResults";
+import ContentResults from "./ContentResults";
 
 const TodoItems=()=>{
 
@@ -11,7 +12,6 @@ const TodoItems=()=>{
         {
             id:1,
             item : '할일1',
-
         },
         {
             id:2,
@@ -29,20 +29,22 @@ const TodoItems=()=>{
     }
 
 
-    const handlerDeletItem=(id)=>{
-        console.log(id)
+    const handlerId=(id)=>{
+
         setList((prevState => {
-            return prevState.filter(($el) => $el.id !== id);
-        }))
-        console.log(list);
+            return prevState.filter(($el)=>$el.id !==id);
+        }));
     }
+
+
+
+
 
 
     return (
         <div className="todoItems-container">
             <Content onFormData={resultInput}/>
-            <TodoResults items={list} onDeleteItem={handlerDeletItem} />
-
+            <TodoResults items={list} onDeleteItemId={handlerId}/>
         </div>
     );
 
