@@ -5,6 +5,8 @@ import Content from "../Title/Content";
 
 import TodoResults from "./ContentResults";
 import ContentResults from "./ContentResults";
+import CreateItem from "./CourseGoalItem";
+import CountItem from "../Title/CountItem";
 
 const TodoItems=()=>{
 
@@ -30,22 +32,17 @@ const TodoItems=()=>{
 
 
     const handlerId=(id)=>{
-
         setList((prevState => {
             return prevState.filter(($el)=>$el.id !==id);
         }));
     }
 
-
-
-
-
-
-
     return (
         <div className="todoItems-container">
             <Content onFormData={resultInput}/>
+            <CountItem items={list}/>
             <TodoResults items={list} onDeleteItemId={handlerId}/>
+
         </div>
     );
 

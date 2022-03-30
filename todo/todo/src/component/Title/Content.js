@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import "../../ui/modules/content.css"
+import CreateItem from "../TodoItem/CourseGoalItem";
 
 const Content =(props)=>{
 
     const [value,setValue]=useState('');
 
     const handlerInput =(e)=>{
-
         setValue(e.target.value);
     }
 
@@ -29,12 +29,16 @@ const Content =(props)=>{
         setValue('');
     }
 
+
+    console.log(value);
+
     return(
         <div>
 
             <form onSubmit={todoSubmit}>
                 <input type="text" value={value} onChange={handlerInput} className="input" placeholder="Enter you todo"/>
             </form>
+
         </div>
 
     )

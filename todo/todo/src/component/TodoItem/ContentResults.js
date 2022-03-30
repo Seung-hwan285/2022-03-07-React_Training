@@ -31,6 +31,8 @@ const TodoResults=(props)=>{
         console.log(show);
     }
 
+    // 사용안하면 무한랜더링걸림
+
     useEffect(()=>{
          handlerDisplay();
     });
