@@ -22,6 +22,7 @@ const Content =(props)=>{
         const obj = {
             id : Math.random(),
             item : value,
+            bool : false,
         };
 
         props.onFormData(obj);
@@ -30,10 +31,10 @@ const Content =(props)=>{
     }
 
 
-    console.log(value);
+
 
     return(
-        <div>
+        <div className="content-container">
 
             <form onSubmit={todoSubmit}>
                 <input type="text" value={value} onChange={handlerInput} className="input" placeholder="Enter you todo"/>

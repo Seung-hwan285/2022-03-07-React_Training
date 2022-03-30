@@ -14,12 +14,11 @@ const TodoItems=()=>{
         {
             id:1,
             item : '할일1',
+            bool : false,
         },
-        {
-            id:2,
-            item : '할일2',
-        },
+
     ]);
+
 
 
     const resultInput =(obj)=>{

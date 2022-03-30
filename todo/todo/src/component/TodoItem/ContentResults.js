@@ -28,7 +28,7 @@ const TodoResults=(props)=>{
             }else{
                 setShow('block');
             }
-        console.log(show);
+
     }
 
     // 사용안하면 무한랜더링걸림
@@ -45,6 +45,7 @@ const TodoResults=(props)=>{
                         <CreateItem
                             id={$el.id}
                             item={$el.item}
+                            bool={$el.bool}
                             onDeleteItemId = {props.onDeleteItemId}
                         />
                     </li>
