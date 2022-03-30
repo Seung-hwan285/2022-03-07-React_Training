@@ -28,16 +28,21 @@ const CreateItem = (props) => {
     }
 
 
-    console.log(props.bool);
-    const [bool,setBool]=useState(props.bool);
-    console.log(bool);
-    const openModal=()=>{
 
-        setBool(true);
+    // const [bool,setBool]=useState(props.bool);
+    const [modalOpen ,setOpen] = useState(false);
 
-    }
 
-    console.log(bool);
+    const openModal = () => {
+
+        setOpen(true);
+        console.log(modalOpen);
+    };
+    console.log(modalOpen);
+    const closeModal = () => {
+        setOpen(false);
+    };
+
 
 
     // ture, false를 modal창 컴포넌트에 보내야함
@@ -46,7 +51,7 @@ const CreateItem = (props) => {
             {props.item}
             <button className="btn" onClick={handlerItemId}>삭제</button>
             <button className="btn" onClick={openModal}>수정</button>
-            <EditModal onModal={bool}/>
+            <EditModal open ={modalOpen} close={closeModal}/>
         </span>
     )
 }

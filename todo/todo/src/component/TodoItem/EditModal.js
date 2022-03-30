@@ -3,14 +3,16 @@ import React, {useEffect, useState} from "react";
 import "../../ui/modules/modal.css"
 const EditModal=(props)=>{
 
-    const [modal,setModal]=useState(false);
+
+    const {open,close} = props;
+    console.log(open);
+
+    const [modal,setOpen]= useState(open);
 
     useEffect(()=>{
-            setModal(props.onModal);
-
-    },[props]);
-
-    console.log(modal)
+        setOpen(open);
+    },[open])
+    console.log(modal);
 
     const [newItem , setNewItem]=useState('');
 
@@ -23,13 +25,14 @@ const EditModal=(props)=>{
     const todoSubmit=(e)=>{
         e.preventDefault();
         setNewItem('');
-
-        setModal(false);
-
+        setOpen(false);
     }
 
+    // 입력이 들어오면 false로 변경되게
+
+
     return(
-        <div>
+        <div >
             <form onSubmit={todoSubmit}>
                 <input type="text" value={newItem}   onChange={handlerInput} className={modal ? "modal-input" :"modal-close"} placeholder="Enter you todo"/>
             </form>
