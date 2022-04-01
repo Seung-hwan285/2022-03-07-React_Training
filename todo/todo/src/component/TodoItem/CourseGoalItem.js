@@ -6,13 +6,8 @@ const CreateItem = (props) => {
         props.onDeleteItemId(props.id);
     }
 
-    // 수정버튼 누르면 모달창 나오게
-
-
     const [newItem , setNewItem]=useState(props.item);
 
-
-    // const [bool,setBool]=useState(props.bool);
     const [modalOpen ,setOpen] = useState(false);
 
 
@@ -21,19 +16,34 @@ const CreateItem = (props) => {
     };
 
 
-    // 값을 전달받음
-    // 전달받은 값이랑 현재 값이랑 바꿔주기 현재값은 newItem
     const handlerModalData=(e)=>{
         setNewItem(e);
+    }
+
+    // chekc 구현
+    // [x] item 클릭했을때 값 나오게
+    // [x] 클릭했을때 안에 css가 있으면 해제 , 없으면 추가
+
+    const handlerItemClick=(e)=>{
+
+        const item = e.target;
+
+        if(!item.className.includes('check')){
+            item.classList.add('item-check')
+            console.log(item);
+        }else{
+
+            item.classList.remove('item-check');
+            console.log(item);
+        }
+
+        // item.style.cssText="text-decoration: line-through";
 
     }
-    // newItem 다시 전달하기
 
-
-    // ture, false를 modal창 컴포넌트에 보내야함
     return(
         <span className="text">
-            {newItem}
+            <span className="item" onClick={handlerItemClick}>{newItem}</span>
             <button className="btn" onClick={handlerItemId}>삭제</button>
             <button className="btn" onClick={openModal}>수정</button>
             <EditModal open ={modalOpen} data={handlerModalData}/>

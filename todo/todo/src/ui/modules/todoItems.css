@@ -17,3 +17,8 @@
     margin: auto;
     text-align: left;
 }
+
+.item-check{
+    text-decoration: line-through;
+}
+
