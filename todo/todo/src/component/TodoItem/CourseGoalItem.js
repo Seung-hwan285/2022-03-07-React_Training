@@ -17,7 +17,11 @@ const CreateItem = (props) => {
 
 
     const handlerModalData=(e)=>{
+        const $item = document.querySelector('.item-check');
+        $item.classList.remove('item-check');
         setNewItem(e);
+
+
     }
 
     // chekc 구현
