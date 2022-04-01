@@ -3,18 +3,17 @@ import React, {useEffect, useState} from "react";
 import "../../ui/modules/modal.css"
 const EditModal=(props)=>{
 
+    const {open} = props;
 
-    const {open,close} = props;
-    console.log(open);
 
     const [modal,setOpen]= useState(open);
 
     useEffect(()=>{
         setOpen(open);
     },[open])
-    console.log(modal);
 
-    const [newItem , setNewItem]=useState('');
+
+    const [modalItem , setNewItem]=useState('');
 
     const handlerInput =(e)=>{
         e.preventDefault();
@@ -24,7 +23,8 @@ const EditModal=(props)=>{
 
     const todoSubmit=(e)=>{
         e.preventDefault();
-        setNewItem('');
+
+        props.data(modalItem);
         setOpen(false);
     }
 
@@ -34,7 +34,7 @@ const EditModal=(props)=>{
     return(
         <div >
             <form onSubmit={todoSubmit}>
-                <input type="text" value={newItem}   onChange={handlerInput} className={modal ? "modal-input" :"modal-close"} placeholder="Enter you todo"/>
+                <input type="text"   onChange={handlerInput} className={modal ? "modal-input" :"modal-close"} placeholder="Enter you todo"/>
             </form>
         </div>
     )

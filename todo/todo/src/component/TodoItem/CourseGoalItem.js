@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import EditModal from "./EditModal";
 
 const CreateItem = (props) => {
@@ -11,47 +11,32 @@ const CreateItem = (props) => {
 
     const [newItem , setNewItem]=useState(props.item);
 
-    const handlerInput =(e)=>{
-        setNewItem(e.target.value);
-    }
-
-
-    const handlerItemChange=()=>{
-
-        return <div className="modal-container">
-                <div className="text">
-                    fds
-                    <input type="text"  onChange={handlerInput} className="input" placeholder="Enter you todo"/>
-                </div>
-        </div>
-
-    }
-
-
 
     // const [bool,setBool]=useState(props.bool);
     const [modalOpen ,setOpen] = useState(false);
 
 
     const openModal = () => {
-
         setOpen(true);
-        console.log(modalOpen);
-    };
-    console.log(modalOpen);
-    const closeModal = () => {
-        setOpen(false);
     };
 
+
+    // 값을 전달받음
+    // 전달받은 값이랑 현재 값이랑 바꿔주기 현재값은 newItem
+    const handlerModalData=(e)=>{
+        setNewItem(e);
+
+    }
+    // newItem 다시 전달하기
 
 
     // ture, false를 modal창 컴포넌트에 보내야함
     return(
         <span className="text">
-            {props.item}
+            {newItem}
             <button className="btn" onClick={handlerItemId}>삭제</button>
             <button className="btn" onClick={openModal}>수정</button>
-            <EditModal open ={modalOpen} close={closeModal}/>
+            <EditModal open ={modalOpen} data={handlerModalData}/>
         </span>
     )
 }
