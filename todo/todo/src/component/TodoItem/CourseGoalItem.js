@@ -14,7 +14,7 @@ const CreateItem = (props) => {
 
 
 
-    const openModal = () => {
+    const handlerOpenModal = () => {
         setOpen(true);
     };
 
@@ -33,11 +33,6 @@ const CreateItem = (props) => {
 
 
 
-    // chekc 구현
-    // [x] item 클릭했을때 값 나오게
-    // [x] item 클릭 했을때 item.checked 가 false면 true로 변경하고 현재 아이템에 css추가
-    // [x] item 클릭 했을때 item.checked 가 true 면  fasel로 변경하고 css추가
-
     const handlerItemClick=(e)=>{
 
         //true 면 아래 실행
@@ -55,7 +50,7 @@ const CreateItem = (props) => {
         <span className="text">
             <span className={checkItem ? "item-check":""} onClick={handlerItemClick}>{newItem}</span>
             <button className="btn" onClick={handlerItemId}>삭제</button>
-            <button className="btn" onClick={openModal}>수정</button>
+            <button className="btn" onClick={handlerOpenModal}>수정</button>
             <EditModal open ={modalOpen} data={handlerModalData}/>
         </span>
     )

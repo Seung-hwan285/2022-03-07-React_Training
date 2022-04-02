@@ -1,16 +1,19 @@
 const api ={
-    key : 'a536cbda68541f2066e2a1fd221d55d5',
-    base: 'https://api.openweathermap.org/data/2.5/',
+    API_KEY : 'a536cbda68541f2066e2a1fd221d55d5',
+    BASE: 'https://api.openweathermap.org/data/2.5/',
 };
 
-const search =()=>{
+export const search =()=>{
 
 
-        fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+        fetch(`${api.BASE}weather?q=${'korea'}&appid=${api.API_KEY}`)
             .then((res)=>res.json())
             .then((result)=>{
                console.log(result);
             });
 
 }
+
+
+
 
