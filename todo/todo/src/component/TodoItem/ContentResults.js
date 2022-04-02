@@ -43,10 +43,13 @@ const TodoResults=(props)=>{
 
                     <li key={$el.id}>
                         <CreateItem
+
                             id={$el.id}
                             item={$el.item}
                             bool={$el.bool}
+                            checked={$el.checked}
                             onDeleteItemId = {props.onDeleteItemId}
+
                         />
                     </li>
                 ))}

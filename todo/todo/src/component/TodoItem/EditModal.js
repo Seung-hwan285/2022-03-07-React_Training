@@ -24,6 +24,8 @@ const EditModal=(props)=>{
     const todoSubmit=(e)=>{
         e.preventDefault();
 
+
+
         props.data(modalItem);
         setOpen(false);
     }

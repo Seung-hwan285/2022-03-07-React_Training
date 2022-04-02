@@ -15,10 +15,10 @@ const TodoItems=()=>{
             id:1,
             item : '할일1',
             bool : false,
+            checked : false,
         },
 
     ]);
-
 
 
     const resultInput =(obj)=>{
@@ -36,11 +36,14 @@ const TodoItems=()=>{
         }));
     }
 
+
+
+    console.log(list);
     return (
         <div className="todoItems-container">
             <Content onFormData={resultInput}/>
             <CountItem items={list}/>
-            <TodoResults items={list} onDeleteItemId={handlerId}/>
+            <TodoResults items={list}  onDeleteItemId={handlerId}/>
 
         </div>
     );

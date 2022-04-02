@@ -23,6 +23,7 @@ const Content =(props)=>{
             id : Math.random(),
             item : value,
             bool : false,
+            checked : false,
         };
 
         props.onFormData(obj);
