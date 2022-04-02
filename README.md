@@ -5,5 +5,4 @@
 리액트를 연습하기 위해서 여러 프로젝트들을 만들어보자는 생각으로 만든 repository입니다.
 
 
-## TodoList
-[Todo-List] https://github.com/Seung-hwan285/2022-03-07-React_Training/tree/master/todo
+## [Todo-List] https://github.com/Seung-hwan285/2022-03-07-React_Training/tree/master/todo
