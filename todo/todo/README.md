@@ -8,7 +8,7 @@
 
 
 
-## 배운점
+## 배울 것
  - 리액트에서는 왜 함수형을 선호하지?
    - [why?](https://www.notion.so/2de209899e4847fb8bbe84dc5a6ef945)
  - 리액트에서는 왜 상태관리를 하는거지?
@@ -16,11 +16,7 @@
  - 리액트 Life-Cycle
    - [why?](https://www.notion.so/React-Life_Cycle-9a880acd7fd14cc29946e3cc26ad8c48)
 
-## 배울 것
- - 리액트에서는 왜 함수형을 선호하지? 
- - 리액트에서는 왜 상태관리를 하는거지?
- - 리액트 Life-Cycle
- 
+   
  - Hook
    - useState 
-   - useEffect 
+   - [useEffect](https://www.notion.so/useEffect-c19871e9a6914069a2cf4ed4b85ade30)
