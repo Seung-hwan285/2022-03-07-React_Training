@@ -7,11 +7,20 @@
 연습을 했었습니다. 하지만 아직도 함수형이 익숙하지 않은 느낌이들어서 연습할겸 투두리스트를 만들어보았습니다.
 
 
+
 ## 배운점
  - 리액트에서는 왜 함수형을 선호하지?
- - 함수형 컴포넌트 vs 클래스형 컴포넌트
- - 리액트에서는 상태관리를 왜 하는거지?
-    
+   - [why?](https://www.notion.so/2de209899e4847fb8bbe84dc5a6ef945)
+ - 리액트에서는 왜 상태관리를 하는거지?
+   - [why?](https://www.notion.so/React-State-61b0ffe1da994519888f0780374cdf1c)  
+ - 리액트 Life-Cycle
+   - [why?](https://www.notion.so/React-Life_Cycle-9a880acd7fd14cc29946e3cc26ad8c48)
+
+## 배울 것
+ - 리액트에서는 왜 함수형을 선호하지? 
+ - 리액트에서는 왜 상태관리를 하는거지?
+ - 리액트 Life-Cycle
+ 
  - Hook
    - useState 
    - useEffect 
