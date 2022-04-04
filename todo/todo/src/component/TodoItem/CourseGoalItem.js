@@ -48,7 +48,7 @@ const CreateItem = (props) => {
 
     return(
         <span className="text">
-            <span className={checkItem ? "item-check":""} onClick={handlerItemClick}>{newItem}</span>
+            <span className={checkItem ? "item-check":"item" } onClick={handlerItemClick}>{newItem}</span>
             <button className="btn" onClick={handlerItemId}>삭제</button>
             <button className="btn" onClick={handlerOpenModal}>수정</button>
             <EditModal open ={modalOpen} data={handlerModalData}/>

@@ -1,5 +1,15 @@
 span{
     margin: 10px;
+
+
+}
+.text{
+
+    color: #ffffff;
+}
+
+span .item{
+    font-size: 20px;
 }
 .btn{
 
