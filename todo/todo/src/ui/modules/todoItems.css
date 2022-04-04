@@ -1,3 +1,6 @@
+.todoItems-container{
+
+}
 .todoItems-container li{
 
     list-style: none;
@@ -11,7 +14,8 @@
 
 .ui-container{
     display: block;
-    background-color: white;
+    transition: 0.25s;
+
     padding: 20px;
     width: 25.5%;
     margin: auto;

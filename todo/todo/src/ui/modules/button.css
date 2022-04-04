@@ -2,7 +2,24 @@ span{
     margin: 10px;
 }
 .btn{
-    margin-top: 5px;
+
+    margin-top: 10px;
+    border: none;
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    float: right;
+    margin-left: 10px;
+}
+
+
+/*
+   margin-top: 5px;
     background-color: #4b4b4b;
     border-radius: 50%;
     margin-right: 10px;
@@ -10,5 +27,4 @@ span{
     float: right;
     padding: 5px;
     font-weight: bold;
-
-}
+*/
