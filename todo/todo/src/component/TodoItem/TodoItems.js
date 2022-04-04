@@ -4,8 +4,7 @@ import Content from "../Title/Content";
 
 
 import TodoResults from "./ContentResults";
-import ContentResults from "./ContentResults";
-import CreateItem from "./CourseGoalItem";
+
 import CountItem from "../Title/CountItem";
 import Timer from "../../Time/Timer";
 

@@ -3,15 +3,16 @@
   margin: 0;
 }
 
-body{
-  width: 100%;
-  height: 100%;
-}
+
 
 .App {
+  z-index: 2;
   text-align: center;
   background: url("../public/Sky_with_puffy_clouds.jpg");
   opacity: 0.9;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
+
+
+
