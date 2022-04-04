@@ -1,17 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 import TodoItems from "./component/TodoItem/TodoItems";
-import {search} from "./component/Weather/Fetch.js";
-import WeatherRender from "./component/Weather/WeatherRender";
 
+import {useState} from "react";
+import Form from "./component/Weather/Form";
 
 
 function App() {
 
+
+
+
   return (
     <div className="App">
-      <TodoItems/>
-        <WeatherRender/>
+        <h3>Weahter App</h3>
+
+        <Form/>
+        <TodoItems/>
+
     </div>
   );
 }

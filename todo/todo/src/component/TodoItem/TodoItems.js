@@ -7,6 +7,9 @@ import TodoResults from "./ContentResults";
 import ContentResults from "./ContentResults";
 import CreateItem from "./CourseGoalItem";
 import CountItem from "../Title/CountItem";
+import Timer from "../../Time/Timer";
+
+
 
 const TodoItems=()=>{
 
@@ -17,14 +20,10 @@ const TodoItems=()=>{
             bool : false,
             checked : false,
         },
-
     ]);
 
-
     const resultInput =(obj)=>{
-
         setList((prevState=>{
-
             return [...prevState , obj];
         }));
     }
@@ -36,12 +35,11 @@ const TodoItems=()=>{
         }));
     }
 
-
-
     console.log(list);
     return (
         <div className="todoItems-container">
             <Content onFormData={resultInput}/>
+            <Timer/>
             <CountItem items={list}/>
             <TodoResults items={list}  onDeleteItemId={handlerId}/>
 
