@@ -15,6 +15,8 @@ const EditModal=(props)=>{
 
     const [modalItem , setNewItem]=useState('');
 
+
+
     const handlerInput =(e)=>{
         e.preventDefault();
         setNewItem(e.target.value);
@@ -23,16 +25,11 @@ const EditModal=(props)=>{
 
     const todoSubmit=(e)=>{
         e.preventDefault();
-
-
-
         props.data(modalItem);
         setOpen(false);
     }
 
     // 입력이 들어오면 false로 변경되게
-
-
     return(
         <div >
             <form onSubmit={todoSubmit}>

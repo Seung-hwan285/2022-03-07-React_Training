@@ -10,7 +10,7 @@ import Timer from "../../Time/Timer";
 
 
 
-const TodoItems=()=>{
+const TodoItems=(props)=>{
 
     const [list,setList]=useState([
         {
@@ -34,11 +34,16 @@ const TodoItems=()=>{
         }));
     }
 
-    console.log(list);
+    const handlerHour=(e)=>{
+        props.onHour(e);
+    }
+
+
+
     return (
         <div className="todoItems-container">
             <Content onFormData={resultInput}/>
-            <Timer/>
+            <Timer onHour={handlerHour}/>
             <CountItem items={list}/>
             <TodoResults items={list}  onDeleteItemId={handlerId}/>
 

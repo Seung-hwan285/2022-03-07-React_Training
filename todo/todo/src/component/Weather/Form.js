@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-
+import "../../ui/modules.css"
 const api ={
     API_KEY : 'a536cbda68541f2066e2a1fd221d55d5',
     BASE: 'https://api.openweathermap.org/data/2.5/',
@@ -8,7 +8,7 @@ const api ={
 const Form =()=>{
 
     const [data,setData]=useState([]);
-
+    const [Icon,setIcon]=useState("");
 
     let componentMouted=true;
 
@@ -24,25 +24,21 @@ const Form =()=>{
            componentMouted=false;
        }
 
+
        fetchWeather();
 
    },[]);
 
-
-   const [Icon, setIcon]=useState("");
+   console.log(data)
 
    useEffect(()=>{
        if(data.weather){
-           console.log(data.weather[0]);
            setIcon(data.weather[0].icon);
        }
    },[data]);
 
-   console.log(Icon)
-
-
    // let temp = (data.main.temp-273.15).toFixed(2);
-    console.log(data)
+
    return(
 
         <div className="weather-container">

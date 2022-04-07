@@ -5,8 +5,8 @@
 
 
 
-.App {
-  z-index: 2;
+.App-AM {
+
   text-align: center;
   background: url("../public/Sky_with_puffy_clouds.jpg");
   opacity: 0.9;
@@ -14,5 +14,17 @@
   min-height: 100vh;
 }
 
+.App-PM {
 
+  text-align: center;
+  background: url("../public/fds.jpg");
+  opacity: 0.9;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+.App-PM{
+
+}
 
