@@ -6,7 +6,7 @@ import {Provider, useDispatch, useSelector} from "react-redux";
 
 // 2개 파라미터 받음
 function reducer(current , action) {
-    
+
     // input으로 받은 aciton을 처리
 
     if(current === undefined){
