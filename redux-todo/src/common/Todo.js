@@ -7,6 +7,8 @@ export const TODO_TOGGLE = "TODO/TOGGLE";
 
 /* 액션 생성 함수 */
 export const todoInsert = (id, text) => {
+
+
     return {
         type: TODO_INSERT,
         payload: {
@@ -15,6 +17,7 @@ export const todoInsert = (id, text) => {
             isCompleted: false,
         },
     };
+
 };
 export const todoRemove = (id) => {
     return {
