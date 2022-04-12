@@ -5,12 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import {createStore} from "redux";
-import todoReducer from "./common/reducer.js";
-const store = createStore(todoReducer);
+import store from "./commons/store";
+
+
+
 ReactDOM.render(
-  <Provider store={store}>
+    <Provider store={store}>
       <App />
-  </Provider>,
+    </Provider>,
   document.getElementById('root')
 );
 

@@ -2,19 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import {Provider} from "react-redux";
 import {createStore} from "redux";
-import TodoTemplate from "./components/TodoTemplate";
+import {Container, Wrapper} from "./styled/Template";
+import InputForm from "./components/InputForm";
 
-import TodoInput from "./components/TodoInput";
 
 
 function App() {
   return (
-  <div>
-    <TodoTemplate>
-      <TodoInput/>
-
-    </TodoTemplate>
-  </div>
+  <Container>
+      <Wrapper>
+       <InputForm/>
+      </Wrapper>
+  </Container>
   );
 }
 
