@@ -6,12 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import {createStore} from "redux";
 import store from "./commons/store";
+import TodoList from "./components/TodoList";
 
 
 
 ReactDOM.render(
     <Provider store={store}>
       <App />
+
     </Provider>,
   document.getElementById('root')
 );

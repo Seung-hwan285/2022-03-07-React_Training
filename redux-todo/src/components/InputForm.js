@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
-import {InputBox} from "../styled/Template";
+import {Button, InputBox} from "../styled/Template";
+import {add_todo} from "../commons/actions";
 const InputForm=()=>{
     const dispatch = useDispatch();
 
@@ -13,12 +14,24 @@ const InputForm=()=>{
         console.log(text)
     }
 
+
+    const handlerClick=()=>{
+        const todo={
+            title :text,
+            isComplete: false,
+        };
+
+        dispatch(add_todo(todo));
+
+        setText("");
+    }
     return(
         <div>
             <InputBox
-
-            onChange={handlerChange}
+                onChange={handlerChange}
             />
+
+            <Button onClick={handlerClick}>추가</Button>
         </div>
     )
 }
