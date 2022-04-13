@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {ContainerItem, Text, TextColumn} from "../styled/Template";
+import {ContainerItem, DeleteBtn, Text, TextColumn} from "../styled/Template";
 
 const TodoItem=({todo})=>{
     console.log(todo);
@@ -10,6 +10,10 @@ const TodoItem=({todo})=>{
     const {id,title,isComplete}= todo;
 
 
+
+    const handlerClick=(e)=>{
+        console.log(e.target);
+    }
     return(
         <ContainerItem>
             <TextColumn>
@@ -17,7 +21,11 @@ const TodoItem=({todo})=>{
                 <Text>
                     {title}
                 </Text>
+
                 </div>
+                <DeleteBtn onClick={handlerClick} >
+                    {'X'}
+                </DeleteBtn>
             </TextColumn>
 
         </ContainerItem>

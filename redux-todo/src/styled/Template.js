@@ -70,3 +70,11 @@ export const TextColumn = styled.div`
 export const Text=styled.span`
   color: red;
 `
+
+export const DeleteBtn=styled.button`
+      color: #a892ee;
+      border : none;
+      background: white;
+      cursor: pointer;
+      float: right;
+`;
