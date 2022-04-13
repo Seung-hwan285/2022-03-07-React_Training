@@ -13,7 +13,6 @@ const TodoItem=({todo})=>{
     return(
         <ContainerItem>
             <TextColumn>
-
                 <div>
                 <Text>
                     {title}

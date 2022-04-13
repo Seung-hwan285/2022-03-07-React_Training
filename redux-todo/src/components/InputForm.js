@@ -30,7 +30,6 @@ const InputForm=()=>{
             <InputBox
                 onChange={handlerChange}
             />
-
             <Button onClick={handlerClick}>추가</Button>
         </div>
     )

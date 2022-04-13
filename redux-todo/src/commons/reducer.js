@@ -15,4 +15,6 @@ export const reducer =(state=init , action)=>{
                 todos: [...state.todos , action.todo],
         };
     }
+
+   return state;
 }
