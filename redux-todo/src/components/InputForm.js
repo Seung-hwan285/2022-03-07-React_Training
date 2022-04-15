@@ -10,10 +10,8 @@ const InputForm=()=>{
 
     const handlerChange=(e)=>{
         setText(e.target.value);
-
         console.log(text)
     }
-
 
     const handlerClick=()=>{
         const todo={
@@ -25,10 +23,12 @@ const InputForm=()=>{
 
         setText("");
     }
+
     return(
         <div>
             <InputBox
                 onChange={handlerChange}
+                value={text}
             />
             <Button onClick={handlerClick}>추가</Button>
         </div>

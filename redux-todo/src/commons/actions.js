@@ -15,3 +15,10 @@ export const add_todo =(todo)=>{
         }
     };
 };
+
+export const delete_todo=(id)=>{
+    return {
+        type : DELETE,
+        id,
+    }
+}
