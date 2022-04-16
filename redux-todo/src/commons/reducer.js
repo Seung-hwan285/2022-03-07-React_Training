@@ -1,4 +1,4 @@
-import {ADD, DELETE} from "./actions";
+import {ADD, DELETE, UPDATE} from "./actions";
 
 const init={
     todos: [],
@@ -17,6 +17,11 @@ export const reducer =(state=init , action)=>{
     }else if(action.type===DELETE){
        return{
            todos: [...state.todos.filter((todo)=>todo.id !==action.id)]
+       };
+   }else if(action.type===UPDATE){
+       return{
+           todos:[state.todos.map((todo)=>todo.id ===action.id ? {...state.todos,
+               title : action.title} : todo)]
        }
    }
 

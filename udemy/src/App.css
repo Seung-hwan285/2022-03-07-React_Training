@@ -1,12 +1,13 @@
-* {
+*{
   box-sizing: border-box;
 }
 
-html {
-  font-family: sans-serif;
+html{
   background: #4b4b4b;
 }
 
-body {
+body{
   margin: 0;
 }
+
+

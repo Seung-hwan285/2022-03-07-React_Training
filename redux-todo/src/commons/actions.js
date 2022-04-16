@@ -1,6 +1,7 @@
 
 export const ADD=  "ADD_TODO";
 export const DELETE = "DELETE_TODO";
+export const UPDATE ="UPDATE_TODO";
 
 let id = 1;
 
@@ -21,4 +22,13 @@ export const delete_todo=(id)=>{
         type : DELETE,
         id,
     }
+}
+
+export const update_todo=(id,text)=>{
+
+    return{
+        type : UPDATE,
+        payload : {id: id, text: text},
+    };
+
 }

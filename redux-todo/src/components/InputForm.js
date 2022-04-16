@@ -1,12 +1,11 @@
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {Button, InputBox} from "../styled/Template";
-import {add_todo} from "../commons/actions";
+import {add_todo, update_todo} from "../commons/actions";
 const InputForm=()=>{
     const dispatch = useDispatch();
 
     const [text,setText]=useState("");
-
 
     const handlerChange=(e)=>{
         setText(e.target.value);
@@ -23,6 +22,8 @@ const InputForm=()=>{
 
         setText("");
     }
+
+
 
     return(
         <div>
