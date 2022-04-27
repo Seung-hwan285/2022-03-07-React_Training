@@ -6,11 +6,12 @@
 
 
 ## [chp1. Todo-List](https://github.com/Seung-hwan285/2022-03-07-React_Training/tree/master/todo/todo)
-## [ch2. Redux]
+
 
 ## 배울 것
 - 클래스형 컴포넌트
 - 함수형 컴포넌트
-- React Hook
+- React Hook (useState ,useRef)
 - Weather API
 - Redux
+- 

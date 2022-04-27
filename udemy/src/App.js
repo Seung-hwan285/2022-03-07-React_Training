@@ -18,7 +18,7 @@ function App() {
     return (
         <div>
             <AddUser onData={handlerData}/>
-            <UserList users={userList}/>
+            <UserList users={userList}/>years old
         </div>
 
     );
