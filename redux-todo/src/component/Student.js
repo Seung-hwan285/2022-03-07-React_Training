@@ -1,12 +1,17 @@
 import React from "react";
-const Student=({name})=>{
+const Student=({name,dispatch,id})=>{
 
 
-    console.log(name);
+
     return(
         <div>
             <span>{name}</span>
-            <button>삭제</button>
+            <button
+            onClick={()=>{
+                dispatch({type: 'delete',payload : {id}});
+            }}
+
+            >삭제</button>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React, {useReducer, useState} from "react";
 import './App.css';
 import Student from "./component/Student";
+import student from "./component/Student";
 
 
 const reducer=(state,action)=>{
@@ -22,10 +23,17 @@ const reducer=(state,action)=>{
             students: [...state.students ,newS],
         }
     }
+
+    if(action.type==='delete'){
+        return{
+            count: state.count-1,
+            students: state.students.filter(($el)=>$el.id !== action.id),
+
+        };
+    }
 }
 
 const initState={
-
 
         count : 0,
 
@@ -43,7 +51,7 @@ function App() {
 
     const [studentInfo, dispatch]=useReducer(reducer,initState);
 
-    console.log(studentInfo)
+
     return (
         <div>
             <h1>출석부</h1>
@@ -68,6 +76,9 @@ function App() {
                     <Student
                         key={$el.id}
                         name={$el.name}
+
+                        dispatch={dispatch}
+                        id={$el.id}
                     />
                 )
             })}
