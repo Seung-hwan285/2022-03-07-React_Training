@@ -2,49 +2,48 @@ import React, {useReducer, useState} from "react";
 import './App.css';
 import Student from "./component/Student";
 
-const reducer =(state,action)=>{
+
+const reducer=(state,action)=>{
 
 
-    if(action.type ==='add'){
+    if(action.type==='add'){
+
         const name = action.payload.name;
 
 
-
-        const newStudent={
-            id:Date.now(),
+        const newS={
+            count : Date.now(),
             name,
-            isHere:false,
+            bool:false,
         }
-
-
         return{
-            count : state.count+1,
-            students: [...state.students , newStudent],
+            count : state.count +1,
+
+            students: [...state.students ,newS],
         }
     }
 }
 
 const initState={
 
-    count : 0,
-    students:[
-        {
-            id : Date.now(),
+
+        count : 0,
+
+        students:[{
+            id: Date.now(),
             name : 'James',
-            isHere :false,
-        }
-        ]
+            bool: false,
+        }]
+
 }
 
 function App() {
 
     const [name,setName]=useState('');
 
+    const [studentInfo, dispatch]=useReducer(reducer,initState);
 
-    const [studentInfo, dispatch]= useReducer(reducer,initState);
-
-
-
+    console.log(studentInfo)
     return (
         <div>
             <h1>출석부</h1>
@@ -64,11 +63,15 @@ function App() {
             >추가</button>
 
 
-            {studentInfo.students.map(($el)=> {
-                console.log($el)
-                return(<Student name={$el.name}/>)
-
+            {studentInfo.students.map(($el)=>{
+                return(
+                    <Student
+                        key={$el.id}
+                        name={$el.name}
+                    />
+                )
             })}
+
         </div>
     );
 }

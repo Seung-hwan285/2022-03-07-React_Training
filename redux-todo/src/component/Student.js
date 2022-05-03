@@ -1,7 +1,8 @@
 import React from "react";
 const Student=({name})=>{
 
-    
+
+    console.log(name);
     return(
         <div>
             <span>{name}</span>
