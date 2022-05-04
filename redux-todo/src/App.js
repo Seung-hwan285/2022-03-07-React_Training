@@ -13,7 +13,7 @@ const reducer=(state,action)=>{
 
 
         const newS={
-            count : Date.now(),
+            id : Date.now(),
             name,
             bool:false,
         }
@@ -25,10 +25,15 @@ const reducer=(state,action)=>{
     }
 
     if(action.type==='delete'){
-        return{
-            count: state.count-1,
-            students: state.students.filter(($el)=>$el.id !== action.id),
 
+        console.log(action.payload.p_id)
+
+
+        return{
+            ...state,
+            count: state.count-1,
+            students: state.students.filter(
+                ($el)=>$el.id !== action.payload.p_id),
         };
     }
 }
@@ -37,12 +42,7 @@ const initState={
 
         count : 0,
 
-        students:[{
-            id: Date.now(),
-            name : 'James',
-            bool: false,
-        }]
-
+        students:[]
 }
 
 function App() {
@@ -51,6 +51,9 @@ function App() {
 
     const [studentInfo, dispatch]=useReducer(reducer,initState);
 
+    const onReset =()=>{
+        setName('');
+    }
 
     return (
         <div>
@@ -66,19 +69,21 @@ function App() {
             
             <button
                 onClick={()=>{
+                    {onReset()}
                     dispatch({type:'add',payload:{name}})
                 }}
             >추가</button>
 
 
             {studentInfo.students.map(($el)=>{
+
+
                 return(
                     <Student
                         key={$el.id}
                         name={$el.name}
-
                         dispatch={dispatch}
-                        id={$el.id}
+                        p_id={$el.id}
                     />
                 )
             })}

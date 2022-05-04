@@ -1,5 +1,6 @@
-import React from "react";
-const Student=({name,dispatch,id})=>{
+import React, {useState} from "react";
+const Student=({name,dispatch,p_id})=>{
+
 
 
 
@@ -8,7 +9,7 @@ const Student=({name,dispatch,id})=>{
             <span>{name}</span>
             <button
             onClick={()=>{
-                dispatch({type: 'delete',payload : {id}});
+                dispatch({type: 'delete',payload : {p_id}});
             }}
 
             >삭제</button>
