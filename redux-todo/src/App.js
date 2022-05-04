@@ -28,9 +28,8 @@ const reducer=(state,action)=>{
 
         console.log(action.payload.p_id)
 
-
         return{
-            ...state,
+
             count: state.count-1,
             students: state.students.filter(
                 ($el)=>$el.id !== action.payload.p_id),

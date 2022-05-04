@@ -12,4 +12,5 @@
     - [useEffect](https://www.notion.so/useEffect-c19871e9a6914069a2cf4ed4b85ade30)
   
 - Redux
+  - [why?](https://www.notion.so/Redux-a3bbfe0cc8b64af2a98b354043218cc7)
 
