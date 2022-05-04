@@ -36,12 +36,29 @@ const reducer=(state,action)=>{
                 ($el)=>$el.id !== action.payload.p_id),
         };
     }
+
+
+    if(action.type==='mark-line'){
+        console.log(action.payload.p_id);
+    return{
+        count : state.count,
+
+
+
+        students: state.students.map(($el)=>{
+            if($el.id === action.payload.p_id){
+                return {...$el , bool : !$el.bool}
+            }
+        })
+
+    };
+    }
+
 }
 
 const initState={
 
         count : 0,
-
         students:[]
 }
 
@@ -84,6 +101,7 @@ function App() {
                         name={$el.name}
                         dispatch={dispatch}
                         p_id={$el.id}
+                        bool={$el.bool}
                     />
                 )
             })}
