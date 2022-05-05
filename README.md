@@ -13,4 +13,4 @@
   
 - Redux
   - [why?](https://www.notion.so/Redux-a3bbfe0cc8b64af2a98b354043218cc7)
-
+  - [Redux vs useReducer]
