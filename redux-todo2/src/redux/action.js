@@ -6,6 +6,14 @@ export const addTodo =(todo)=>({
             title : todo.title,
             bool : todo.bool,
         }
-    });
+});
 
 
+export const deleteTodo=(id)=>({
+
+
+   type:'DELETE',
+   todo:{
+       id,
+   }
+});

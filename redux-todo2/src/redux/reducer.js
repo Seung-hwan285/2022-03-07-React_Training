@@ -6,6 +6,8 @@ const initState={
 
 const reducer=(state=initState, action)=>{
 
+
+    console.log(action.todo);
     switch (action.type){
         case 'ADD':
 
@@ -13,9 +15,15 @@ const reducer=(state=initState, action)=>{
                 todos: [...state.todos , action.todo],
             }
 
+
+        case 'DELETE':
+            return{
+                todos: [...state.todos.filter((todo)=>todo.id !== action.todo.id)],
+            }
         default:
             return state;
     }
 }
+
 
 export default reducer;
