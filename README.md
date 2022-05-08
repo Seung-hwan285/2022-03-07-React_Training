@@ -7,10 +7,10 @@
 
 ## 배울 것
 - 함수형 컴포넌트
-    - [why?](https://www.notion.so/2de209899e4847fb8bbe84dc5a6ef945)
+    - [what?](https://www.notion.so/2de209899e4847fb8bbe84dc5a6ef945)
 - React Hook
     - [useEffect](https://www.notion.so/useEffect-c19871e9a6914069a2cf4ed4b85ade30)
   
 - Redux
-  - [why?](https://www.notion.so/Redux-a3bbfe0cc8b64af2a98b354043218cc7)
+  - [what?](https://www.notion.so/Redux-a3bbfe0cc8b64af2a98b354043218cc7)
   - [Redux vs useReducer](https://www.notion.so/2022-05-08-71ed6eb04bec4929a6feb7f74a0d9199)
