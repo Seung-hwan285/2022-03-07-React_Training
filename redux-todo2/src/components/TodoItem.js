@@ -10,6 +10,9 @@ const TodoItem=({todo})=>{
 
     const {id , title , bool} =todo;
     const dispatch = useDispatch();
+    const [readOnly,setReadOnly]= useState(true);
+
+    const [updateText, setUpdateText]=useState(title);
 
 
 
@@ -17,8 +20,6 @@ const TodoItem=({todo})=>{
         console.log(id);
         dispatch(deleteTodo(id));
     }
-    const [readOnly,setReadOnly]= useState(true);
-
 
     const updateTodo=()=>{
 
@@ -31,17 +32,6 @@ const TodoItem=({todo})=>{
         console.log(readOnly)
     }
 
-
-    const [updateText, setUpdateText]=useState(title);
-
-    const onChangeText=useCallback(
-        (e)=>{
-            const {value}= e.target;
-            setUpdateText(value);
-        },[updateText]
-    );
-
-
     return(
 
         <div>
@@ -51,7 +41,6 @@ const TodoItem=({todo})=>{
               readOnly = {readOnly}
               checked={bool}
               name="text"
-              onChange={onChangeText}
               onBlur={()=>dispatch(TodoUpdate(id,updateText))}
           />
 
