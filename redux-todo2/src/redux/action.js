@@ -17,3 +17,14 @@ export const deleteTodo=(id)=>({
        id,
    }
 });
+
+
+export const TodoUpdate=(id,text)=>({
+
+
+   type :'UPDATE',
+   todo : {
+       id : id,
+       title : text,
+   }
+});

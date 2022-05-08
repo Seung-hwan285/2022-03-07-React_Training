@@ -20,6 +20,11 @@ const reducer=(state=initState, action)=>{
             return{
                 todos: [...state.todos.filter((todo)=>todo.id !== action.todo.id)],
             }
+
+        case 'UPDATE':
+            return{
+                todos: [...state.todos.map((todo)=> todo.id ===action.todo.id ? {...todo, title : action.todo.title} : todo)]
+            }
         default:
             return state;
     }
