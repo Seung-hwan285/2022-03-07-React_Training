@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useRef, useState} from "react";
 
 import React from "react";
 import './App.css';
@@ -9,6 +9,10 @@ const ResponseCheck =()=>{
 
     const [message,setMessage]=useState('클릭');
     const [result,setResult]=useState([]);
+
+
+    const startTime = useRef();
+    const endTime = useRef();
 
 
 
@@ -23,6 +27,11 @@ const ResponseCheck =()=>{
             setTimeout(()=>{
                 setValue('now');
                 setMessage('지금 클릭');
+
+
+                startTime.current =new Date();
+
+                console.log(startTime)
             },Math.floor(Math.random()*1000)+2000);
         }
         // 성급하게 클릭
@@ -31,33 +40,53 @@ const ResponseCheck =()=>{
             setMessage('너무 성급하세요!');
         }
         else if(value==='now'){ // 반응속도 체크
+
+
+            endTime.current= new Date();
+
             setValue('waiting');
             setMessage('클릭해서 시작하세요');
+
+
+            console.log(endTime)
+
+            setResult((prevState=>[...prevState,  endTime.current - startTime.current]));
         }
 
     }
 
 
+    const onReset=()=>{
+
+        setResult([]);
+    }
 
     const renderAverage=()=>{
 
-        const {result} = value;
+        return result.length ===0 ? null : <div>평균시간 : {result.reduce((a,b)=>a+b) / result.length}
 
-        return result.length ===0 ? null : <div>평균시간 : {result.reduce((a,b)=>a+b) / result.length}</div>
+        <button onClick={onReset}>리셋</button>
+        </div>
+
+
 
     };
 
 
     return(
+        <>
         <div
             id="screen"
             className={value}
             onClick={onClickScreen}
         >
             {message}
-
-            {}
         </div>
+
+            {renderAverage()}
+        </>
+
+
 
     );
 
