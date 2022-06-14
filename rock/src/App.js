@@ -1,18 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react';
+import Purchase from "./components/Purchase";
 
-function App() {
-  return (
-    <div className="App">
+export default class App extends Component {
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            lottoBundle: [],
+        };
 
-      <h1>행운의 로또</h1>
+        this.onPurchaseLotto = this.onPurchaseLotto.bind(this);
+    }
 
-      <main>
+    onPurchaseLotto({ numOfLotto }) {
+        this.setState({ lottoBundle: Array(numOfLotto) });
+    }
 
-      </main>
-    </div>
-  );
+    render() {
+        const { lottoBundle } = this.state;
+
+        return (
+            <div>
+                <h1>🎱 행운의 로또</h1>
+                <main>
+                    <Purchase lottoBundle={lottoBundle} onPurchaseLotto={this.onPurchaseLotto} />
+
+                </main>
+            </div>
+        );
+    }
 }
 
-export default App;
+//
+// function App() {
+//   return (
+//     <div className="App">
+//
+//
+//       <h1>행운의 로또</h1>
+//
+//       <main>
+//             <Purchase/>
+//
+//       </main>
+//     </div>
+//   );
+// }
+//
+// export default App;
