@@ -80,6 +80,11 @@ const Purchase =()=>{
 
                 </label>
 
+                <button type="submit" className="purchase-amount-submit-button"
+
+                        disabled={isSubmitButtonDisabled}>확인</button>
+
+
                 <div>
 
                     {vaildMessage}
