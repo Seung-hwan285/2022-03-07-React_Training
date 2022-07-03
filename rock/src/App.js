@@ -1,7 +1,8 @@
-import { Component } from 'react';
+import {Component, useState} from 'react';
 import Purchase from "./components/Purchase";
 
 export default class App extends Component {
+
     constructor(props) {
         super(props);
 
@@ -11,6 +12,9 @@ export default class App extends Component {
 
         this.onPurchaseLotto = this.onPurchaseLotto.bind(this);
     }
+
+
+
 
     onPurchaseLotto({ numOfLotto }) {
         this.setState({ lottoBundle: Array(numOfLotto) });
@@ -31,20 +35,3 @@ export default class App extends Component {
     }
 }
 
-//
-// function App() {
-//   return (
-//     <div className="App">
-//
-//
-//       <h1>행운의 로또</h1>
-//
-//       <main>
-//             <Purchase/>
-//
-//       </main>
-//     </div>
-//   );
-// }
-//
-// export default App;
