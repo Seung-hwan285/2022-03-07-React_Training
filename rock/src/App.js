@@ -1,37 +1,36 @@
 import {Component, useState} from 'react';
 import Purchase from "./components/Purchase";
+import {generateLottoNumbers} from "./utils/getRandomNumber";
+
 
 export default class App extends Component {
-
     constructor(props) {
         super(props);
 
+
+
         this.state = {
-            lottoBundle: [],
+            ticket:[],
         };
-
-        this.onPurchaseLotto = this.onPurchaseLotto.bind(this);
     }
 
 
+    setTickets(ticketCount){
+
+        this.setState({ticket:Array.from({length : ticketCount},generateLottoNumbers)})
+    };
 
 
-    onPurchaseLotto({ numOfLotto }) {
-        this.setState({ lottoBundle: Array(numOfLotto) });
-    }
 
-    render() {
-        const { lottoBundle } = this.state;
+    render(){
+        return(
 
-        return (
-            <div>
-                <h1>🎱 행운의 로또</h1>
-                <main>
-                    <Purchase lottoBundle={lottoBundle} onPurchaseLotto={this.onPurchaseLotto} />
+            <main>
+                <h1 className="text-center">🎱 행운의 로또</h1>
 
-                </main>
-            </div>
-        );
+                <Purchase setTickets={this.setTickets}/>
+
+           </main>
+        )
     }
 }
-

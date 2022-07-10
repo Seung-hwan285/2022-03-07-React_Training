@@ -1,10 +1,13 @@
 import React, {useState} from "react";
-import {LOTTO_UNIT_PRICE, MESSAGE, MIN_MONETARY_UNIT} from "../constants";
+import {LOTTO_UNIT_PRICE, MESSAGE} from "../constants";
 
 // 로또 구입 금액을 입력하면 유효성 검사 결과 실시간 표시
     // -[x] 로또 1장의 가격이 1000 미만
     // -[x] 로또 1장의 가격이 1000으로 나누어 떨어지지 않을 경우
     // -> 예외창 출력력
+
+
+
 const Purchase =()=>{
 
     const [vaildMessage,setVaild]=useState('');
@@ -58,9 +61,6 @@ const Purchase =()=>{
 
     }
 
-
-
-
     return(
         <dvi>
             <form className="purchase-amount-container" onSubmit={onSubmit}>
@@ -83,12 +83,9 @@ const Purchase =()=>{
                 <button type="submit" className="purchase-amount-submit-button"
 
                         disabled={isSubmitButtonDisabled}>확인</button>
-
-
                 <div>
 
                     {vaildMessage}
-
                 </div>
 
 
@@ -96,11 +93,11 @@ const Purchase =()=>{
 
         </dvi>
     )
-
-
 }
 
 export default Purchase;
+
+
 
 
 
