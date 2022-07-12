@@ -11,15 +11,11 @@ export const generateLottoNumbers=()=>{
     const randomNumbers = new Set();
 
     while(randomNumbers.size < 6){
-
-
         randomNumbers.add(constants());
     }
 
     return Array.from(randomNumbers);
 }
-
-
 
 
 export const LOTTO = Object.freeze({

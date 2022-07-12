@@ -20,8 +20,9 @@ const getNumber=()=>{
   return array;
 }
 
-const App=()=>{
 
+
+const App=()=>{
 
   const [res, setResult]= useState('');
   const [value,setValue]=useState('');
@@ -40,23 +41,21 @@ const App=()=>{
       e.preventDefault();
 
       if(value === answer.join('')){
-          setResult('홈런');
-          setTries((prevState => {
-              return [...prevState , {try : value, res:'홈런'}];
-          }));
 
-      }else{
+          
+          setTries((prevState =>
+            [...prevState , {res : '홈런'}]
+          ));
+      }
+
+      else{
+
           const answerArray = value.split('').map((v)=>parseInt(v));
-            console.log(answerArray);
-            console.log(tries);
-
             let strike =0;
             let ball =0;
 
-
-            console.log(tries.length);
+            console.log(answer)
             if(tries.length >= 2){
-
                 alert('게임을 다시 시작합니다');
 
                 setTries([]);
@@ -64,6 +63,8 @@ const App=()=>{
                 setAnsewer(getNumber());
 
             }
+
+
             else{
 
                 for(let i=0; i<4; i++){
@@ -75,8 +76,7 @@ const App=()=>{
                 }
 
                 setTries((
-                    prevState =>
-                        [...prevState, {try: value, res : `${strike} 스트라이크 입니다. ${ball}볼 입니다`}]));
+                    prevState => [...prevState, {res:`${strike} 스트라이크 , ${ball}볼 입니다`}]));
             }
 
       }

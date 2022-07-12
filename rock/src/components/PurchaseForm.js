@@ -3,85 +3,154 @@ import {LOTTO} from "../utils/constants";
 
 
 
-export default class PurchaseForm extends Component {
+export const PurchaseForm=(props)=>{
 
 
-    constructor(props) {
-        super(props);
+
+    const [purchaseInputValue,setPurchaseInputValue]=useState('');
 
 
-        this.state={
-            purchaseInputValue:'',
-        };
+    const handlerSubmit=(e)=>{
+        e.preventDefault();
 
 
-        this.handleSubmit=this.handleSubmit.bind(this);
-        this.handlerChange=this.handlerChange.bind(this);
+        const ticketCount =Math.floor(Number(purchaseInputValue)/LOTTO.UNIT_PRICE);
 
+
+        props.setTickets(ticketCount);
+
+
+        setPurchaseInputValue('');
+
+        alert(`총 ${ticketCount}장을 구매하였습니다`);
+    }
+
+    const handlerChange=(e)=>{
+
+        const purchaseInput =e.target.value;
+
+        setPurchaseInputValue(purchaseInput);
     }
 
 
-    handleSubmit(event){
-        event.preventDefault();
+    return(
 
-        const ticketCount = Math.floor(Number(this.state.purchaseInputValue) / LOTTO.UNIT_PRICE);
+        <section>
+        <form className="" onSubmit={handlerSubmit}>
 
-        this.props.setTickets(ticketCount);
-        this.setState({ purchaseInputValue: '' });
+        <h2 className="text">로또 구입할 금액을 입력하세요</h2>
 
-        alert(`총 ${ticketCount}장을 구매하였습니다.`);
-    }
+        <div className="flex">
+            <label htmlFor="purchase-input" className="sr">
 
+                구입 금액 입력란
+            </label>
 
-    handlerChange(event){
-
-        const purchaseInputValue =event.target.value;
-
-
-
-        this.setState({purchaseInputValue});
-    }
-    
-    render() {
-        
-        return(
-            
-            <form className="" onSubmit={this.handleSubmit}>
-                
-                <h2 className="text">구입할 금액을 입력하세요</h2>
-                
-                <div className="flex">
-                    <label htmlFor="purchase-input" className="sr">
-                        
-                        구입 금액 입력란
-                    </label>
-
-                    <input
-                        id="purchase-input"
-                        type="number"
-                        className="shadow"
-                        placeholder="구입 금액"
-                        onChange={this.handlerChange}
+            <input
+                id="purchase-input"
+                type="number"
+                className="shadow"
+                placeholder="구입 금액"
+                onChange={handlerChange}
 
 
-                    />
+            />
 
-                    <button
-                        type="submit"
-                        className="font-bold"
+            <button
+                type="submit"
+                className="font-bold"
 
-                    >
+            >
 
-                        확인
-                    </button>
-                </div>
-            </form>
-        )
-    }
-
-
+                확인
+            </button>
+        </div>
+    </form>
+        </section>
+    )
 }
 
 
+//
+// export default class PurchaseForm extends Component {
+//
+//
+//     constructor(props) {
+//         super(props);
+//
+//
+//         this.state={
+//             purchaseInputValue:'',
+//         };
+//
+//
+//         this.handleSubmit=this.handleSubmit.bind(this);
+//         this.handlerChange=this.handlerChange.bind(this);
+//
+//     }
+//
+//
+//     handleSubmit(event){
+//         event.preventDefault();
+//
+//         const ticketCount = Math.floor(Number(this.state.purchaseInputValue) / LOTTO.UNIT_PRICE);
+//
+//         this.props.setTickets(ticketCount);
+//         this.setState({ purchaseInputValue: '' });
+//
+//         alert(`총 ${ticketCount}장을 구매하였습니다.`);
+//     }
+//
+//
+//     handlerChange(event){
+//
+//         const purchaseInputValue =event.target.value;
+//
+//
+//
+//         this.setState({purchaseInputValue});
+//     }
+//
+//     render() {
+//
+//         return(
+//
+//             <form className="" onSubmit={this.handleSubmit}>
+//
+//                 <h2 className="text">구입할 금액을 입력하세요</h2>
+//
+//                 <div className="flex">
+//                     <label htmlFor="purchase-input" className="sr">
+//
+//                         구입 금액 입력란
+//                     </label>
+//
+//                     <input
+//                         id="purchase-input"
+//                         type="number"
+//                         className="shadow"
+//                         placeholder="구입 금액"
+//                         onChange={this.handlerChange}
+//
+//
+//                     />
+//
+//                     <button
+//                         type="submit"
+//                         className="font-bold"
+//
+//                     >
+//
+//                         확인
+//                     </button>
+//                 </div>
+//             </form>
+//         )
+//     }
+//
+//
+// }
+//
+//
 
 
