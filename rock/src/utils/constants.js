@@ -1,4 +1,4 @@
-export const constants=()=>{
+export const getRandomNumber =()=>{
 
 
     return Math.floor(
@@ -10,11 +10,11 @@ export const constants=()=>{
 export const generateLottoNumbers=()=>{
     const randomNumbers = new Set();
 
-    while(randomNumbers.size < 6){
-        randomNumbers.add(constants());
+    while(randomNumbers.size < LOTTO.LENGTH){
+        randomNumbers.add(getRandomNumber());
     }
 
-    return Array.from(randomNumbers);
+    return Array.from(randomNumbers).sort((a,b)=>a-b);
 }
 
 
