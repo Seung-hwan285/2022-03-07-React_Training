@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{react-training/node_modules}" />
+    <file url="file://$PROJECT_DIR$/baseball" libraries="{react-training/baseball/node_modules}" />
+    <file url="file://$PROJECT_DIR$/document" libraries="{react-training/document/node_modules}" />
+    <file url="file://$PROJECT_DIR$/learn-redux" libraries="{react-training/learn-redux/node_modules}" />
+    <file url="file://$PROJECT_DIR$/redux-todo" libraries="{react-training/redux-todo/node_modules}" />
+    <file url="file://$PROJECT_DIR$/redux-todo2" libraries="{react-training/redux-todo2/node_modules}" />
+    <file url="file://$PROJECT_DIR$/rock" libraries="{react-training/rock/node_modules}" />
+    <file url="file://$PROJECT_DIR$/spped" libraries="{react-training/spped/node_modules}" />
+    <file url="file://$PROJECT_DIR$/tic-tac-toe" libraries="{react-training/tic-tac-toe/node_modules}" />
+    <file url="PROJECT" libraries="{@types/prop-types, react-training/baseball/node_modules, react-training/document/node_modules, react-training/learn-redux/node_modules, react-training/node_modules, react-training/redux-todo/node_modules, react-training/redux-todo2/node_modules, react-training/rock/node_modules, react-training/spped/node_modules, react-training/tic-tac-toe/node_modules}" />
+    <includedPredefinedLibrary name="Node.js Core" />
+  </component>
+</project>

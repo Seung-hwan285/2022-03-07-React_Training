@@ -11,7 +11,6 @@ const getNumber=()=>{
 
   const array =[];
   for(let i=0; i<4; i++){
-
     const chose = Math.floor(Math.random()*9);
     array.push(chose);
 

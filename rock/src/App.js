@@ -11,7 +11,6 @@ function App(){
     const handlerTicket =(ticketCount)=> {
 
         setTickets({
-
            lotto:Array.from({
                length: ticketCount
            },generateLottoNumbers)
@@ -20,24 +19,19 @@ function App(){
     }
 
 
-    const test=()=>{
-        console.log(tickets);
-    }
-
-
     return(
-        <main>
 
+        <main>
             <h1 className="text-center">🎱 행운의 로또</h1>
 
             <PurchaseForm setTickets={handlerTicket}/>
 
-            <TicketDeatil tickets={tickets}/>
-
+            <TicketDeatil tickets={tickets} />
         </main>
-
     );
+
 }
+
 
 export default App;
 

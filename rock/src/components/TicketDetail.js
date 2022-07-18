@@ -4,6 +4,7 @@ export const TicketDeatil=({tickets})=>{
 
     const [isDetail , seetIsDetail]= useState(false);
     const [ticketLen , setTicketLen]=useState(0);
+
     const handlerChange=(e)=>{
 
         seetIsDetail({
@@ -14,10 +15,12 @@ export const TicketDeatil=({tickets})=>{
 
     useEffect(()=>{
 
+        console.log(tickets.lotto)
         if(tickets.lotto){
             setTicketLen(tickets.lotto.length);
         }
     },[tickets])
+
 
 
     return(
