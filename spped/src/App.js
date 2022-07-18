@@ -5,9 +5,11 @@ import ResponseCheck from "./ResponseCheck";
 function App() {
   return (
     <div className="App">
+        <div>
 
+            <ResponseCbheck/>
 
-        <div><ResponseCheck/></div>
+        </div>
     </div>
 
 

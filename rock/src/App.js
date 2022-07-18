@@ -1,50 +1,158 @@
-import { Component } from 'react';
-import Purchase from "./components/Purchase";
 
-export default class App extends Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            lottoBundle: [],
-        };
 
-        this.onPurchaseLotto = this.onPurchaseLotto.bind(this);
-    }
-
-    onPurchaseLotto({ numOfLotto }) {
-        this.setState({ lottoBundle: Array(numOfLotto) });
-    }
-
-    render() {
-        const { lottoBundle } = this.state;
-
-        return (
-            <div>
-                <h1>🎱 행운의 로또</h1>
-                <main>
-                    <Purchase lottoBundle={lottoBundle} onPurchaseLotto={this.onPurchaseLotto} />
-
-                </main>
-            </div>
-        );
-    }
-}
-
+// function App(){
 //
-// function App() {
-//   return (
-//     <div className="App">
+//     const [tickets , setTickets]=useState([]);
 //
 //
-//       <h1>행운의 로또</h1>
+//     const handlerTicket =(ticketCount)=> {
 //
-//       <main>
-//             <Purchase/>
 //
-//       </main>
-//     </div>
-//   );
+//         setTickets({
+//             lotto:Array.from({
+//
+//                 length : ticketCount,
+//             },generateLottoNumbers)
+//         })
+//     }
+//
+//     return(
+//         <main>
+//
+//             <h1 className="text-center">🎱 행운의 로또</h1>
+//
+//             <PurchaseForm setTickets={handlerTicket}/>
+//
+//             <TicketDetail tickets={tickets}/>
+//
+//         </main>
+//
+//     );
 // }
 //
 // export default App;
+
+//
+//
+// export default class App extends Component {
+//
+//     constructor(props) {
+//         super(props);
+//
+//         this.state={
+//             tickets :[],
+//         };
+//
+//         this.setTickets = this.setTickets.bind(this);
+//     }
+//
+//
+//     setTickets(ticketCount){
+//
+//         this.setState({tickets : Array.from({length:ticketCount},generateLottoNumbers)});
+//
+//     }
+//
+//     render() {
+//
+//         return(
+//
+//             <main>
+//
+//                 <PurchaseForm setTickets={this.setTickets} />
+//                 {/*<TicketDetail tickets ={this.state.tickets}/>*/}
+//                 <TicketDetail tickets ={this.state.tickets} />
+//
+//             </main>
+//
+//
+//         )
+//     }
+//
+// }
+
+import {useState} from "react";
+import {PurchaseForm} from "./components/PurchaseForm";
+import {generateLottoNumbers} from "./utils/constants";
+import {TicketDetail} from "./components/TicketDetail";
+
+function App(){
+
+    const [tickets , setTickets]=useState([]);
+
+
+    const handlerTicket =(ticketCount)=> {
+
+        setTickets({
+
+           lotto:Array.from({
+               length: ticketCount
+           },generateLottoNumbers)
+
+        });
+    }
+
+
+    const test=()=>{
+        console.log(tickets);
+    }
+
+
+    return(
+        <main>
+
+            <h1 className="text-center">🎱 행운의 로또</h1>
+
+            <PurchaseForm setTickets={handlerTicket}/>
+
+            <TicketDetail tickets={tickets}/>
+
+        </main>
+
+    );
+}
+
+export default App;
+
+
+
+//
+// export default class App extends Component {
+//
+//     constructor(props) {
+//         super(props);
+//
+//         this.state={
+//
+//             tickets: [],
+//         };
+//
+//         this.setTickets = this.setTickets.bind(this);
+//     }
+//
+//
+//     setTickets(ticketCount){
+//         this.setState({
+//             tickets : Array.from(
+//                 {
+//                     length: ticketCount}
+//                 ,generateLottoNumbers)});
+//     }
+//
+//
+//     render() {
+//
+//         return(
+//             <main>
+//
+//                 <PurchaseForm setTickets={this.setTickets}/>
+//                 <TicketDetail tickets={this.state.tickets}/>
+//
+//             </main>
+//         )
+//     }
+//
+//
+// }
+
