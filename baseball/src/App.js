@@ -46,9 +46,15 @@ const App=()=>{
             [...prevState , {res : '홈런'}]
           ));
       }
+<<<<<<< HEAD
 
       else{
 
+=======
+
+      else{
+
+>>>>>>> cf39b55d591cf8b0a8b77cf7b0b097d94ceae206
           const answerArray = value.split('').map((v)=>parseInt(v));
             let strike =0;
             let ball =0;

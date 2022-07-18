@@ -5,7 +5,6 @@ export const getRandomNumber =()=>{
     );
 }
 
-
 export const generateLottoNumbers=()=>{
     const randomNumbers = new Set();
 
